@@ -5,8 +5,7 @@ const glob = require("glob");
 
 
 const https = require('https');
-var request = require('request');
-var fetch = require('node-fetch');
+// var fetch = require('node-fetch');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 setTimeout(process.exit, 10*60*1000, 0);
@@ -15,8 +14,8 @@ const doc = new GoogleSpreadsheet('1wYrbhZBv9YvrPRbNPFOOXsa2Lclk2CQHPyiVk9Vyqjk'
 
 let snap_name = new Date().toJSON().slice(0, 10);
 
-// var shell = require('shelljs');
-// shell.exec('taskkill /f /im chrome.exe & ver > nul')
+var shell = require('shelljs');
+shell.exec('taskkill /f /im chrome.exe & ver > nul')
 
 
 // const buffers = fs.readFileSync("inject.js");
@@ -123,7 +122,7 @@ let browser_args = ['--window-size=1366,768',
 ];
 
 browser = await puppeteer.launch({
-    headless:false,
+    headless:true,
     ignoreHTTPSErrors: true,
     userDataDir:user_data_dir,
     slowMo: 0,
