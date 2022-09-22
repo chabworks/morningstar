@@ -25,11 +25,11 @@ const todayDate = new Date().toISOString().slice(0, 10);
 
 
 // Asynchronous version
-fs.unlink('data/'+todayDate+'.json', function(err) {
-    if(!err) {
-        console.log('File deleted '+'data/'+todayDate+'.json');
-    }    
-})
+// fs.unlink('data/'+todayDate+'.json', function(err) {
+//     if(!err) {
+//         console.log('File deleted '+'data/'+todayDate+'.json');
+//     }    
+// })
 
 // options is optional
 // glob("screenshots/*.jpeg", {}, function (er, files) {
@@ -84,7 +84,7 @@ async function captureScreenshot() {
 
 
 try {
-	
+  
 
 let user_data_dir = './myUserDataDir';
 
@@ -155,8 +155,8 @@ await new Promise(resolve => setTimeout(resolve, 700));
 await new Promise(resolve => setTimeout(resolve, 500));
 // console.log(window_all_DONE)
 result = await page.evaluate(() => {
-	window.final_data = [];
-	window.window_all_DONE = false;
+  window.final_data = [];
+  window.window_all_DONE = false;
 
 
 
@@ -219,8 +219,8 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 
        let jsonstr = JSON.stringify(result["second"]);
        
-       fs.writeFileSync('data/'+todayDate+'.json', jsonstr);
-       console.log("\n\n"+'Success! File Exported to: '+'data/'+todayDate+'.json'+"\n\n");
+       // fs.writeFileSync('data/'+todayDate+'.json', jsonstr);
+       // console.log("\n\n"+'Success! File Exported to: '+'data/'+todayDate+'.json'+"\n\n");
 
 
           if(result["second"].length){          
