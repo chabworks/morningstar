@@ -14,8 +14,8 @@ const doc = new GoogleSpreadsheet('1wYrbhZBv9YvrPRbNPFOOXsa2Lclk2CQHPyiVk9Vyqjk'
 
 let snap_name = new Date().toJSON().slice(0, 10);
 
-var shell = require('shelljs');
-shell.exec('taskkill /f /im chrome.exe & ver > nul')
+// var shell = require('shelljs');
+// shell.exec('taskkill /f /im chrome.exe & ver > nul')
 
 
 // const buffers = fs.readFileSync("inject.js");
@@ -210,8 +210,7 @@ for (let i = 0; true; i++) {
      }
    })
 
-console.log(result["second"]);
-console.log( typeof result["second"])
+// console.log(result["second"]);
 
 await new Promise(resolve => setTimeout(resolve, 1000));
 
