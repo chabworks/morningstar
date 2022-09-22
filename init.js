@@ -10,6 +10,12 @@ const https = require('https');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 setTimeout(process.exit, 10*60*1000, 0);
 const creds = require('./sheetlogins.json');
+
+
+//main sheet
+// const doc = new GoogleSpreadsheet('1TLGVMRISYnU-XDZ9SdoTS5M-VCGxk3pCOdCO3XH38qQ');
+
+//test sheet
 const doc = new GoogleSpreadsheet('1wYrbhZBv9YvrPRbNPFOOXsa2Lclk2CQHPyiVk9Vyqjk');
 
 let snap_name = new Date().toJSON().slice(0, 10);
@@ -21,7 +27,7 @@ let snap_name = new Date().toJSON().slice(0, 10);
 // const buffers = fs.readFileSync("inject.js");
 // const inject_js = buffers.toString();
 
-const todayDate = new Date().toISOString().slice(0, 10);
+// const todayDate = new Date().toISOString().slice(0, 10);
 
 
 // Asynchronous version
@@ -171,6 +177,8 @@ $(document).ready(function(){
       to_be_push["advances"] = '';
       to_be_push["declines"] = '';
       to_be_push["date_time"] = '';
+
+      if ($('table tbody tr').length) {
         $('tbody tr').each(function(index, tr) {
             $(tr).find('td').each (function (index, td) {
                 if($(td).parent().find('th').text() == "Total Issues Traded"){
@@ -184,6 +192,7 @@ $(document).ready(function(){
                 }
             });
         });
+      }
         to_be_push["date_time"] = date_for_data;
 
       window.final_data.push(window.to_be_push);
