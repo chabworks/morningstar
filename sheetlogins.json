@@ -1,0 +1,12 @@
+{
+"type": "service_account",
+"project_id": "sheet-share-with-hardik",
+"private_key_id": "e40fafa023411d5297810703682dd09da5fda31f",
+"private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCjI+VZ69wPu+/J\nxM01bG5XkPb/eXllAVXMOrWAA4wC4jlCwm+hNs+sDRujK0KlG8RVfiDlwNCPjWLi\nGUQHgAm72+s3SjnwF/orvb4frn6GI7jOrwrzg6X5zvsFCLkf0ehfRlt6EoOWze/u\n9OsRVeh4uA0WjALDs/MQ0UblCAtgxm/fzC010OmI4OXjopNw7Wg2ASdVVCb7hVZE\nJUOL6VyCTnF8HNnKKsfzzmr9ij7MkXZytql+6m0F1Okvx8wg1Zt7Pt0t3S7Y0S9b\nXuIGXGgSCDr8xCq3VGkcn1JP4ckVtl78nT6IIz2H5Bywwf/kSlutNht1Iddeb/nd\n9jeLKTV7AgMBAAECggEADmRMx92ASN0N/tE/Py7FHzF5MLlxJaF0BbPKLjRh5iE5\n5vNLMMAqmuV/IipfUzx7WgVp9orHe1qANiz/bN/1O97fRb3lFZKv7arr+lSE8eV1\n2Lnlb+0Vt890IpIN7sowQzNsP30hoayiNYTiteFLxFaMRQht+ADIeRvVMsA+bLeA\nrzPHWgHh7MubLN6DRLHFKGhgJcNMYpnsmzksTvwrMHhZ3ihhdaejhdCG/BELdR0y\ndkUFe3yTDxXTmxa5WT0OqZG08euSuhl4r8/0SwTBNCckCqcwqBnqpuUeqKmYoThb\ncxOPeJd6OLXEUgckgBi3dn0ce8zjp828K9FdsPIglQKBgQDWN0OKBdo9XSv75vBP\nB5cpWUYRDITT1/RIG2RgH8iNSpRP4lZwbLZ72julvov0l0uOKDdLYAEpVnaliKs3\nZNxiQTRZdKbW2gk06SE+VbugzbcdliJVx7aW19e9814o2BbJCuVZ+AN2eQ4xkCRI\niWim625Fj+HIo1yVHMe88jwfPwKBgQDC9jN2zpVT6hsRPd3xSlFQoeeKd4EwB63f\nMdF93HF6dhICq9oh/EeAQ0g2mLlHnFkfBYLmGgm4ENTsiYprEblr8WJ/Io02gzYc\nLKZa38LXY3lgzYx/ZdxavtK2nvdFKqZ8WpIqNRakZrVIixvuyCzYXtXlOFLVeCFo\ntxs9PBpWxQKBgQCdhlwbJjybPWW3wtZaN0m4dVap+NvAcKDJWaNRcG3pQLuZluZb\nnAYBQ7TzKBEBFzTPX9FxkzKndFahWcQWYwwREMPvOHHrssBscTcqAJ+OG1iZ4Cp1\ni/xAJo8Wtt06CdWPl3ya0V+ygkimt8mGsc0MWjpn2ut8wGy3lkdnMXZ2vwKBgFbP\nAzlKYMk9exHhRzqSCcTqYkuQTJCTSsMPzqTJDCon+nsABB+P0lJ1IulUdWNCZZhf\nftpwC5XOwNAVqfFksfgzQdU0EEaOhABljSj3ay02mKwWuhFbzJMHVpGEFLvSctD6\nDw0GGG/ZX6zObACVVwp8p6bpvlBYrh+PMGzCn0O1AoGBAIHWYYTG6z8gA9LmoC6W\nPjt2HEUZ37wD3M03ZNvvwmlVOcIAX8bURpUMd8U42OYfn4jCMqEWtQ8TU+HKZqzn\n7OzI378mYHNttH8K6YYMRVnkQvYh29xHXDWR4yWg6P+wb0df5xsdQKj/DTQicfvB\nW0wjPY2aace2WuQXqFWJnYdY\n-----END PRIVATE KEY-----\n",
+"client_email": "hardik@sheet-share-with-hardik.iam.gserviceaccount.com",
+"client_id": "105652315817278672124",
+"auth_uri": "https://accounts.google.com/o/oauth2/auth",
+"token_uri": "https://oauth2.googleapis.com/token",
+"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hardik%40sheet-share-with-hardik.iam.gserviceaccount.com"
+}
