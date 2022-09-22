@@ -5,7 +5,6 @@ const glob = require("glob");
 
 
 const https = require('https');
-// var fetch = require('node-fetch');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 setTimeout(process.exit, 10*60*1000, 0);
@@ -13,22 +12,15 @@ const creds = require('./sheetlogins.json');
 
 
 //main sheet
-// const doc = new GoogleSpreadsheet('1TLGVMRISYnU-XDZ9SdoTS5M-VCGxk3pCOdCO3XH38qQ');
+const doc = new GoogleSpreadsheet('1TLGVMRISYnU-XDZ9SdoTS5M-VCGxk3pCOdCO3XH38qQ');
 
 //test sheet
-const doc = new GoogleSpreadsheet('1wYrbhZBv9YvrPRbNPFOOXsa2Lclk2CQHPyiVk9Vyqjk');
+// const doc = new GoogleSpreadsheet('1wYrbhZBv9YvrPRbNPFOOXsa2Lclk2CQHPyiVk9Vyqjk');
 
 let snap_name = new Date().toJSON().slice(0, 10);
 
 // var shell = require('shelljs');
 // shell.exec('taskkill /f /im chrome.exe & ver > nul')
-
-
-// const buffers = fs.readFileSync("inject.js");
-// const inject_js = buffers.toString();
-
-// const todayDate = new Date().toISOString().slice(0, 10);
-
 
 // Asynchronous version
 // fs.unlink('data/'+todayDate+'.json', function(err) {
@@ -37,21 +29,7 @@ let snap_name = new Date().toJSON().slice(0, 10);
 //     }    
 // })
 
-// options is optional
-// glob("screenshots/*.jpeg", {}, function (er, files) {
-//     for (const file of files) {
-//         if(!file.includes(snap_name))
-//         {
-//           fs.unlink(file, function(err) {
-//             if(!err) {
-//                 console.log('File deleted '+file);
-//             }    
-//           })
-//         }
-//     }
-// });
 
-// console.log(inject_js);
 console.log('\nScript is initiating. Please Wait..!\n');
 
 function makeid(length) {
@@ -193,7 +171,7 @@ $(document).ready(function(){
             });
         });
       }
-        to_be_push["date_time"] = date_for_data;
+      to_be_push["date_time"] = date_for_data;
 
       window.final_data.push(window.to_be_push);
 
@@ -205,6 +183,7 @@ $(document).ready(function(){
 
 });
 await new Promise(resolve => setTimeout(resolve, 1000));
+
 for (let i = 0; true; i++) {
 
  result = await page.evaluate(() => {
@@ -225,35 +204,30 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 
      if (typeof result["first"] == 'boolean' && result["first"]) {
 
-       let jsonstr = JSON.stringify(result["second"]);
-       
+       let jsonstr = JSON.stringify(result["second"]);       
        // fs.writeFileSync('data/'+todayDate+'.json', jsonstr);
        // console.log("\n\n"+'Success! File Exported to: '+'data/'+todayDate+'.json'+"\n\n");
 
-
-          if(result["second"].length){          
+          if(result["second"].length){     
             
-
-
             let sheetaddRow_res;
             for (let ins =0; ins<result["second"].length ;ins++) {
 
-                      try{
+                  try{
 
-                        if(cellValues.indexOf(result["second"][ins]['date_time']) === -1){
+                    if(cellValues.indexOf(result["second"][ins]['date_time']) === -1){
 
-                             sheetaddRow_res = await sheet.addRow(result["second"][ins]);
-                              await new Promise(resolve => setTimeout(resolve, 850));
-                          }
-                          else{
-                            console.log( "\n\n"+"Already data available for this date...." )
-                          }
-                     
-                        
-                       
-                      }catch(err){
-                        console.log('Erroes in add rowes '+err);
+                         sheetaddRow_res = await sheet.addRow(result["second"][ins]);
+                          await new Promise(resolve => setTimeout(resolve, 850));
                       }
+                      else{
+                        console.log( "\n\n"+"Already data available for this date...." )
+                      }                    
+                    
+                   
+                  }catch(err){
+                    console.log('Erroes in add rowes '+err);
+                  }
 
             }
           }
@@ -262,8 +236,6 @@ await new Promise(resolve => setTimeout(resolve, 1000));
      }else{
        console.log(result["first"]);
      }
-
-
 
 
   if(i>100000) break;
