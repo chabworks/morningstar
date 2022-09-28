@@ -61,6 +61,11 @@ function flattenObject(ob) {
     return toReturn;
 }
 
+
+
+
+
+
 let browser = null;
 
 async function captureScreenshot() {
@@ -106,7 +111,7 @@ let browser_args = ['--window-size=1366,768',
 ];
 
 browser = await puppeteer.launch({
-    headless:true,
+    headless:false,
     ignoreHTTPSErrors: true,
     userDataDir:user_data_dir,
     slowMo: 0,
@@ -144,19 +149,42 @@ result = await page.evaluate(() => {
 
 
 
-$(document).ready(function(){
-      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      var today  = new Date();
-      // var date_for_data = today.toLocaleDateString("en-US");
-      today.setDate(today.getDate() - 1);
-      var date_for_data = today.toLocaleDateString('en-US', {year:'2-digit', month:'2-digit', day:'2-digit'});
+$(document).ready(function(){  
+      function formatDate(date) {
+        var date_format = date.split(', ')
+        var inputs_dates=date_format[0].split('/');
+        if (typeof date_format[1] == 'undefined') {date_format[1] = '00:00:00';}
+        return (
+          [
+            padTo2Digits(inputs_dates[0]),
+            padTo2Digits(inputs_dates[1]),      
+            inputs_dates[2]
+          ].join('/') +
+          ' ' +
+          date_format[1]
+        ).replace(' 24:',' 00:');
+      }
+      function padTo2Digits(num) {
+        return num.toString().padStart(2, '0');
+      }
+
+
+      var todaysd = new Date();
+      var date_for_data = formatDate( new Date(todaysd.setDate(todaysd.getDate() - 1)).toLocaleString('en-US', { timeZone: 'America/New_York' })).split(' ')[0]
+
       to_be_push = {};
       to_be_push["total_issues"] = '';
       to_be_push["advances"] = '';
       to_be_push["declines"] = '';
       to_be_push["date_time"] = '';
 
+      // var datafileDate = current_date_for_data;
+      // console.log(datafileDate)
+
       if ($('table tbody tr').length) {
+
+        date_for_data = $('table').attr('data-fileDate');
+
         $('tbody tr').each(function(index, tr) {
             $(tr).find('td').each (function (index, td) {
                 if($(td).parent().find('th').text() == "Total Issues Traded"){
@@ -171,7 +199,10 @@ $(document).ready(function(){
             });
         });
       }
-      to_be_push["date_time"] = date_for_data;
+
+
+      var datafileDate = new Date(date_for_data).toLocaleDateString(undefined,{year:'2-digit', month:'2-digit', day:'2-digit'});
+      to_be_push["date_time"] = datafileDate;
 
       window.final_data.push(window.to_be_push);
 
