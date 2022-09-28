@@ -111,7 +111,7 @@ let browser_args = ['--window-size=1366,768',
 ];
 
 browser = await puppeteer.launch({
-    headless:false,
+    headless:true,
     ignoreHTTPSErrors: true,
     userDataDir:user_data_dir,
     slowMo: 0,
