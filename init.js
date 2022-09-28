@@ -158,7 +158,7 @@ $(document).ready(function(){
           [
             padTo2Digits(inputs_dates[0]),
             padTo2Digits(inputs_dates[1]),      
-            inputs_dates[2]
+            inputs_dates[2].split('').slice(2,4).join('')
           ].join('/') +
           ' ' +
           date_format[1]
@@ -170,7 +170,7 @@ $(document).ready(function(){
 
 
       var todaysd = new Date();
-      var date_for_data = formatDate( new Date(todaysd.setDate(todaysd.getDate() - 1)).toLocaleString('en-US', { timeZone: 'America/New_York' })).split(' ')[0]
+      var datafileDate =  formatDate( new Date(todaysd.setDate(todaysd.getDate() - 1)).toLocaleString('en-US', { timeZone: 'America/New_York' }) ).split(' ')[0]
 
       to_be_push = {};
       to_be_push["total_issues"] = '';
@@ -179,11 +179,13 @@ $(document).ready(function(){
       to_be_push["date_time"] = '';
 
       // var datafileDate = current_date_for_data;
-      // console.log(datafileDate)
 
       if ($('table tbody tr').length) {
 
-        date_for_data = $('table').attr('data-fileDate');
+        var date_for_data = $('table').attr('data-fileDate');
+
+        // datafileDate = new Date(date_for_data).toLocaleDateString(undefined,{year:'2-digit', month:'2-digit', day:'2-digit'});
+        datafileDate = formatDate( new Date(date_for_data).toLocaleString('en-US') ).split(' ')[0]
 
         $('tbody tr').each(function(index, tr) {
             $(tr).find('td').each (function (index, td) {
@@ -201,7 +203,7 @@ $(document).ready(function(){
       }
 
 
-      var datafileDate = new Date(date_for_data).toLocaleDateString(undefined,{year:'2-digit', month:'2-digit', day:'2-digit'});
+      
       to_be_push["date_time"] = datafileDate;
 
       window.final_data.push(window.to_be_push);
